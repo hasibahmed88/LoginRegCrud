@@ -1,6 +1,16 @@
 <?php
-    include "header.php";
-    $access = Cookie::ActiveUser();
+session_start();
+if (isset($_SESSION['name'])) {
+    header("location: dashboard.php");
+}
+use App\classes\Admin;
+include "header.php";
+?>
+<?php
+    $login = new Admin();
+    if (isset($_REQUEST['login_btn'])) {
+        $adminLogin = $login->adminLogin();
+    }
 ?>
 
 <div class="container my-4">
@@ -12,17 +22,6 @@
                 </div>
                 <div class="card-body">
                     <form action="" method="POST">
-
-            <?php
-                $login = new Login();
-                if (isset($_REQUEST['login_btn'])) {
-                    $userLogin = $login->UserLogin($_REQUEST);
-                    if ($userLogin==true) {
-                        echo $userLogin;
-                    }
-                }   
-
-            ?>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input id="email" name="email" type="email" class="form-control form-control-sm">

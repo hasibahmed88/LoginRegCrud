@@ -1,6 +1,5 @@
 <?php
-
 define('host','localhost');
 define('dbuser','root');
 define('dbpwd','');
-define('dbname','blog');
+define('dbname','blog2');

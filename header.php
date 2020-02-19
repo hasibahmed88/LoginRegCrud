@@ -1,5 +1,12 @@
 <?php
-  include "include/autoload.php";
+use App\classes\Admin;
+include "vendor/autoload.php";
+?>
+<?php
+$admin = new Admin();
+if (isset($_REQUEST['logout'])) {
+  $logout = $admin->adminLogout($_REQUEST['USSD']);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,45 +32,43 @@
   </button>
 
   <div class="collapse navbar-collapse " id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-
-    <?php
-      if (isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='home.php'>Home</a></li>";
+   <ul class="navbar-nav mx-auto">
+     <?php 
+      if (!isset($_COOKIE['USSD'])) {
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='index.php'>Home</a></li>";
       }
-    ?>
+      ?>
     <?php
       if (isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='user_profile.php'>Profile</a></li>";
-      }
-    ?>
-    <?php
-      if (isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='all_user.php'>All User</a></li>";
-      }
-    ?>
-    <?php
-      if (isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='user_logout.php'>Logout</a></li>";
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='dashboard.php'>Dashboard</a></li>";
       }
     ?>
     <?php
       if (!isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='index.php'>Index</a></li>";
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='user_login.php'>Login</a></li>";
       }
     ?>
     <?php
       if (!isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='user_login.php'>Login</a></li>";
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='user_register.php'>Register</a></li>";
+      }
+      ?>
+    <?php
+      if (isset($_COOKIE['USSD'])) {
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='profile.php'>Profile</a></li>";
       }
     ?>
     <?php
-      if (!isset($_COOKIE['USSD'])) {
-        echo "<li class='nav-item'><a class='nav-link' href='user_register.php'>Register</a></li>";
+      if (isset($_COOKIE['USSD'])) {
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='view_student.php'>Students</a></li>";
       }
-    ?>  
-            
-    </ul>
+    ?>
+    <?php
+      if (isset($_COOKIE['USSD'])) {
+        echo "<li class='nav-item'><a class='nav-link text-dark' href='?logout=true'>Logout</a></li>";
+      }
+     ?>
+   </ul>
 
   </div>
   </div>
