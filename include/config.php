@@ -2,4 +2,4 @@
 define('host','localhost');
 define('dbuser','root');
 define('dbpwd','');
-define('dbname','blog2');
+define('dbname','blog');
