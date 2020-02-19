@@ -5,14 +5,10 @@ if (isset($_SESSION['name'])) {
 }
 use App\classes\Database;
 include "header.php";
-
 $db = new Database();
 
-
 ?>
-
 <h3 class="text-center mt-5">Index page</h3>
-
 
 <?php
     include "footer.php";

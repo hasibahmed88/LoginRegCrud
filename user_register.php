@@ -12,7 +12,6 @@ $register = '';
 if (isset($_REQUEST['reg_btn'])) {
     $register = $admin->adminRegister();
 }
-
 ?>
 <div class="container my-4">
     <div class="row justify-content-center">
@@ -59,9 +58,6 @@ if (isset($_REQUEST['reg_btn'])) {
         </div>
     </div>
 </div>
-
-
-
 
 <?php
     include "footer.php";

@@ -12,7 +12,6 @@ include "header.php";
         $adminLogin = $login->adminLogin();
     }
 ?>
-
 <div class="container my-4">
     <div class="row justify-content-center">
         <div class="col-12 col-md-6">
@@ -42,7 +41,6 @@ include "header.php";
         </div>
     </div>
 </div>
-
 
 <?php
     include "footer.php";

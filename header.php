@@ -23,7 +23,6 @@ if (isset($_REQUEST['logout'])) {
 <body>
 
 <!-- Navbar -->
-
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 <div class="container">
   <a class="navbar-brand" href="index.php">Login Register system PHP OOP</a>
@@ -69,7 +68,6 @@ if (isset($_REQUEST['logout'])) {
       }
      ?>
    </ul>
-
   </div>
   </div>
 </nav>
